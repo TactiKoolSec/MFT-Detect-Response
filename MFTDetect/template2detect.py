@@ -6,8 +6,8 @@ from uuid import uuid4
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-                    prog = "Template2Sigma",
-                    description = "Convert template files to Sigma rules")
+                    prog = "Template2Detect",
+                    description = "Convert template files to detection rules")
     parser.add_argument("-f", "--file", default="", required=True, help="Single file to convert")
     parser.add_argument("-c", "--csv", default="", required=True, help="CSV file to read from")
     parser.add_argument("-o", "--output", help="File to output to. If not provided, outputs to stdout")
