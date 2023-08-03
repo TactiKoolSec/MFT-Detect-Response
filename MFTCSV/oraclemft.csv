@@ -1,0 +1,23 @@
+Key,Value
+WebAppProcess1, java.exe 
+WebAppCmdLine,*weblogic-launcher.jar*
+SelfHostedWebApp,Yes
+ProductName,Oracle MFT
+WebAppProcessFullPath,%JDKHOME%\bin\java.exe
+WebAppDirectory,%ORACLEHOME%\user_projects\domains\%MFTDOMAIN%\
+WebAppParent,cmd.exe
+WebAppGParent,wlsvcX64.exe
+DefaultWebAdminPort,7001
+DefaultMFTAdminPort,7003
+DefaultFTPPortMFTListen,21
+DefaultSFTPPortMFTListen,22
+MFTDataBaseDirectory,%ORACLEHOME%\oradata\%databasename%
+MFTUsers, %domainhome%\servers\AdminServer\data\ldap\ldapfiles\changelog.data*
+MFTDefaultLogDirectory,%domainhome%\server
+MFTLogginConfig,%domainhome%\servers\%mft_server\logs\
+MFTAuthenticationLogs,%domainhome%\servers\%mft_server\logs\mft-es\%mftserver%-es-diagnostic*.log
+MFTFileTransferLogs,%domainhome%\servers\%mft_server\logs\mft-es\%mftserver%-es-diagnostic*.log
+SupportsAutomationCommands,Yes
+AutomationProcess,java.exe
+AutomationProcessCmdLine,*weblogic-launcher.jar*
+MFTAutomationArtifact,%domainhome%\servers\%mft_server\logs\mft-es\%mftserver%-es-diagnostic*.log

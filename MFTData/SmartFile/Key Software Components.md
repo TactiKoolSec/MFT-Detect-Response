@@ -1,0 +1,33 @@
+| **Key Software Components**                                             | **NOTES**                              |                                                                                                  |
+|-------------------------------------------------------------------------|----------------------------------------|--------------------------------------------------------------------------------------------------|
+| **Web Hosting Process:**                                                |                                        |                                                                                                  |
+| **Web Hosting Process Working Directory:**                              |                                        |                                                                                                  |
+| **Web Hosting Process Command Line:**                                   |                                        |                                                                                                  |
+| **Web Hosting Process parent:**                                         |                                        |                                                                                                  |
+| **Web Hosting Process grandparent:**                                    |                                        |                                                                                                  |
+| **MFT Portal:**                                                         | <https://ibm.smartfile.com/ftp/login/> |                                                                                                  |
+|                                                                         |                                        |                                                                                                  |
+| **Log Sources for Common Attacker Actions**                             | **NOTES**                              |                                                                                                  |
+| **New User Creation:**                                                  | go to sidebar\>activity                |                                                                                                  |
+| **User Authentication Event to Admin Console:**                         | go to sidebar\>activity                |                                                                                                  |
+| **MFT Console Access Logs:**                                            | only available to admin                |                                                                                                  |
+| **Admin Console Access Logs:**                                          | go to sidebar\>activity                |                                                                                                  |
+| **File Activity Events:**                                               | go to sidebar\>activity                |                                                                                                  |
+|                                                                         |                                        |                                                                                                  |
+| **Command Execution via MFT Automation:**                               |                                        |                                                                                                  |
+| **Command Execution via MFT Automation Activity within MFT Datastore:** |                                        |                                                                                                  |
+| **Command Execution via MFT Auomation Activity within Logs:**           |                                        |                                                                                                  |
+|                                                                         |                                        |                                                                                                  |
+| **ADDITIONAL DATA**                                                     | **NOTES**                              |                                                                                                  |
+| **Version**                                                             | 17.1.121                               |                                                                                                  |
+| **Default Install Dir**                                                 |                                        |                                                                                                  |
+| **Our servers use of the following IP Address range: 209.43.40.0/24**   |                                        | <https://help.filesharing.guru/connection-methods/ip-addresses-ports-and-firewall-configuration> |
+| **Default Ports**                                                       | 21, 22, 80, 443, 990, 21000-21050      | <https://help.filesharing.guru/connection-methods/ip-addresses-ports-and-firewall-configuration> |
+| **Documentation:**                                                      | <https://help.filesharing.guru/>       |                                                                                                  |
+|                                                                         |                                        |                                                                                                  |
+|                                                                         |                                        |                                                                                                  |
+|                                                                         |                                        |                                                                                                  |
+|                                                                         |                                        |                                                                                                  |
+| activity log for user creation, send/receive, user authentication       |                                        |                                                                                                  |
+
+![](media/135063f1d3ee14ca1a2dd4a35e779598.png)

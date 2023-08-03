@@ -1,0 +1,25 @@
+Key,Value
+WebAppProcess,w3wp.exe
+SelfHostedWebApp,No
+ProductName,MyWorkDrive MFT
+WebAppDirectory,"c:\Windows\System32\inetsrv\"
+WebAppProcessFullPath,c:\Windows\System32\inetsrv\w3wp.exe
+WebAppCmdLine,w3wp.exe -ap "WanPath.WebClient"
+WebAppParent,svchost.exe
+WebAppGParent,services.exe
+WebAppServiceName,World Wide Web Publishing Service
+MFTAppProcess,:C:\Program Files (x86)\Wanpath\MyWorkDrive\Service\MyWorkDrive.Service.exe
+MFTAppDirectory,MFTProcess:C:\Program Files (x86)\Wanpath\MyWorkDrive\Service\
+MFTAppCommandLine,C:\Program Files (x86)\Wanpath\MyWorkDrive\Service\MyWorkDrive.Service.exe
+MFTServiceName,MyWorkDrive Service
+DefaultWebAdminPort,8358
+DefaultWebUserPort,8357
+MFTDataBaseDirectory,C:\Wanpath\WanPath.Data
+MFTUsers,WanPath.Data\Logs\AdminDashboard\Log-%date%
+MFTDefaultLogDirectory,C:\Wanpath\WanPath.Data\Logs\
+MFTLogginConfig,C:\Wanpath\WanPath.Data
+MFTAuthenticationLogs,C:\Wanpath\WanPath.Data\Logs\AdminDashboard\Log-*
+WebAppAuthenticationEvents,C:\inetpub\logs\LogFiles\W3SVC*\*.log
+MFTFileTransferLogs,C:\WanPath\WantPath.Data\Logs\AdminDashboard\*.xml
+WebAppFileTransferLogs,C:\inetpub\logs\LogFiles\W3SVC*\*.log
+SupportsAutomationCommands,No

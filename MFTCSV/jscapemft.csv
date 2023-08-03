@@ -1,0 +1,30 @@
+Key,Value
+WebAppProcess,server.exe
+SelfHostedWebApp,Yes
+ProductName,JSCAPE MFT
+WebAppDirectory,"""C:\Program Files\MFT Server\"""
+WebAppProcessFullPath,C:\Program Files\MFT Server\server.exe
+WebAppCmdLine,C:\Program Files\MFT Server\server.exe
+WebAppParent,services.exe
+WebAppGParent,wininit.exe
+MFTServiceName,MFT Server
+DefaultWebAdminPort,11880
+DefaultWebUserPort,80
+DefaultFTPPortMFTListen,21
+DefaultSFTPPortMFTListen,22
+DefaultFTPSMFTListen,990
+DefaultHTTPMFTListen,80
+DefaultHTTPSMFTListen,443
+DefaultOFTPMFTListen,3305
+DefaultHTTPAPI,11880
+DefaultHTTPSAPI,11443
+MFTDataBaseDirectory,C:\Program Files\MFT Server\data\
+MFTUsers,C:\Program Files\MFT Server\users
+MFTDefaultLogDirectory,C:\Program Files\MFT Server\logs
+MFTLogginConfig,http://%MFTServer%:11880/2/rest/management/domains/test/logging?_=1690135179711
+MFTAuthenticationLogs,%installdir%\logs\%domain%-%datetime%-%domainname%.log
+MFTFileTransferLogs,%installdir%\logs\%domain%-%datetime%-%domainname%.log
+SupportsAutomationCommands,Yes
+AutomationProcess,"""C:\Program Files\MFT Server\server.exe"""
+AutomationProcessCmdLine,"C:\Program Files\MFT Server\server.exe ""MFT Server"" __i4j_restart"
+MFTAutomationLogs,%installdir%\logs\%domain%-%datetime%-%domainname%.log

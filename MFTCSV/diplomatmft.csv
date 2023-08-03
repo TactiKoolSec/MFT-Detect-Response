@@ -1,0 +1,27 @@
+Key,Value
+WebAppProcess,tomcat8.exe
+SelfHostedWebApp,No
+ProductName,Diplomat MFT
+WebAppProcessFullPath,C:\Program Files\Coviant Software\Diplomat-j\tomcatWebserver\bin\tomcat8.exe
+WebAppDirectory,C:\Program Files\Coviant Software\Diplomat-j\tomcatWebserver\bin\
+WebAppCmdLine,C:\Program Files\Coviant Software\Diplomat-j\tomcatWebserver\bin\tomcat8.exe *"
+WebAppParent,services.exe
+WebAppGParent,wininit.exe
+MFTServiceName,Diplomat MFT 64
+DefaultWebAdminPort,8080
+DefaultWebUserPort,80
+DefaultFTPPortMFTListen,21
+DefaultSFTPPortMFTListen,22
+DefaultFTPSMFTListen,990
+DefaultHTTPMFTListen,80
+DefaultHTTPSMFTListen,443
+MFTDataBaseDirectory,C:\ProgramData\Coviant Software\Diplomat-j \db\derby\diplomatDb\
+MFTUserCreationLogs, C:\ProgramData\Coviant Software\Diplomat-j \logs\Diplomat.%date%.%time%.log
+MFTUsers,C:\Program Files\MFT Server\users
+MFTDefaultLogDirectory,C:\ProgramData\Coviant Software\Diplomat-j \logs\
+MFTDefaultAuthenticationLogs,C:\ProgramData\Coviant Software\Diplomat-j \logs\sftpserver\DiplomatSFTP.%date%.%time%.log
+MFTFileTransferLogs,C:\ProgramData\Coviant Software\Diplomat-j \logs\sftpserver\DiplomatSFTP.%date%.%time%.log
+SupportsAutomationCommands,Yes
+AutomationProcess,C:\Program Files\Coviant Software\Diplomat-j \tomcatWebserver\bin\tomcat8.exe
+AutomationProcessCmdLine,C:\Program Files\Coviant Software\Diplomat-j \tomcatWebserver\bin\tomcat8.exe *
+MFTAutomationArtifact, C:\ProgramData\Coviant Software\Diplomat-j \logs\Diplomat.%date.%time%.log 

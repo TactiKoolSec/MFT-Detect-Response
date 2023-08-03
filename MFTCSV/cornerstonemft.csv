@@ -1,0 +1,31 @@
+Key,Value
+WebAppProcess,srxserver.exe
+SelfHostedWebApp,Yes
+ProductName,Cornerstone MFT
+WebAppDirectory,"""C:\Program Files\South River Technologies\srxserver\"""
+WebAppCmdLine,C:\Program Files\South River Technologies\srxserver\SrxServer.exe
+WebAppParent,services.exe
+WebAppGParent,wininit.exe
+MFTServiceName,Cornerstone MFT Server NextGen
+AutomationProcess,"""C:\Program Files\MFT Server\server.exe"""
+AutomationProcessCmdLine,"C:\Program Files\MFT Server\server.exe"
+WebAdminPort,31443
+DefaultWebUserPort,7003
+DefaultFTPPortMFTListen,21
+DefaultSFTPPortMFTListen,22
+DefaultFTPSMFTListen,990
+DefaultHTTPMFTListen,80
+DefaultHTTPSMFTListen,443
+DefaultOFTPMFTListen,3305
+DefaultHTTPAPI,11880
+DefaultHTTPSAPI,11443
+MFTDataBaseDirectory,C:\ProgramData\South River Technologies\srxserver\database
+MFTUsers,C:\Srtdata\Default Server\usr
+MFTDefaultLogDirectory,C:\Srtlogs
+MFTLoggingConfig,C:\ProgramData\South River Technologies\srxserver\database\%MFTServerDatabasefile%
+MFTAuthenticationLogs,c:\srtlogs\%mftservername%\%hostname%.logfile.%datae%
+MFTFileTransferLogs,c:\srtlogs\%mftservername%\%hostname%.logfile.%datae%
+SupportsAutomationCommands,Yes
+AutomationProcess,C:\Program Files\South River Technologies\srxserver\srxserver.exe
+AutomationProcessCmdLine,C:\Program Files\South River Technologies\srxserver\srxserver.exe
+MFTAutomationArtifact,c:\srtlogs\%mftservername%\%hostname%.logfile.%datae%
