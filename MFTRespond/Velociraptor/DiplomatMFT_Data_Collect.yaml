@@ -1,0 +1,35 @@
+name: Custom.Windows.DiplomatMFT
+description: |
+  Collect valuable data sources from Diplomat MFT
+parameters:
+  - name: MFTLogPath
+    default: "ProgramData\\Coviant Software\\Diplomat-trial\\logs\\*.log"
+  - name: MFTWebAppPath
+    default: "Program Files\\Coviant Software\\Diplomat-trial\\tomcatWebserver\\"
+  - name: MFTSFTPLogPath
+    default: "ProgramData\\Coviant Software\\Diplomat-trial\\logs\\sftpserver\\*.log"
+  - name: WindowsRoot
+    default: C:\\
+sources:
+  - name: WebAppEnumMFT
+    description: |
+      schema:
+        - ComputerName: str
+        - Path: str
+        - MD5: str
+        - SHA1: str
+        - SHA256: str
+        - Ctime: datetime
+        - Mtime: datetime
+        - Atime: datetime
+    queries:
+      - Let compname <= SELECT Hostname from info()
+      - |
+          SELECT compname[0].Hostname as ComputerName, FullPath, Hashes.MD5 as MD5, Hashes.SHA1 as SHA1, Hashes.SHA256 as SHA256,
+                Stat.Ctime as Ctime, Stat.Mtime as Mtime, Stat.Atime as Atime
+                FROM foreach(row = {SELECT FullPath FROM glob(globs=array(a=WindowsRoot + MFTWebAppPath + "\\**{9}\\*"), accessor="ntfs")},
+                               query={ SELECT FullPath, hash(path=FullPath, accessor="ntfs") as Hashes, {SELECT Atime, Ctime, Mtime from stat(filename=FullPath, accessor="ntfs")} as Stat FROM scope()})
+  - name: LogCollectionMFT 
+    queries:
+    - Let compname <= SELECT Hostname from info()
+    - SELECT compname[0].Hostname as ComputerName, upload(file=FullPath), FullPath FROM glob(globs=array(a=WindowsRoot + MFTLogPath,b=WindowsRoot + MFTSFTPLogPath), accessor="ntfs")

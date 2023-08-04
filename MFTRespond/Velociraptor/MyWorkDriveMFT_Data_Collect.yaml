@@ -1,0 +1,41 @@
+name: Custom.Windows.MyWorkDriveMFT
+description: |
+  Collect valuable data sources from MyWorkDrive MFT
+parameters:
+  - name: MFTLogPath
+    default: "Wanpath\\WanPath.Data\\Logs"
+  - name: IISWebAppPath
+    default: "inetpub\\wwwroot"
+  - name: MFTAppPath
+    default: "Program Files (x86)\\Wanpath\\MyWorkDrive\\Service"
+  - name: IISLogs
+    default: "inetpub/logs/LogFiles/W3SVC*"
+  - name: WindowsRoot
+    default: C:\\
+sources:
+  - name: WebAppEnumMFT
+    description: |
+      schema:
+        - ComputerName: str
+        - Path: str
+        - MD5: str
+        - SHA1: str
+        - SHA256: str
+        - Ctime: datetime
+        - Mtime: datetime
+        - Atime: datetime
+    queries:
+      - Let compname <= SELECT Hostname from info()
+      - |
+          SELECT compname[0].Hostname as ComputerName, FullPath, Hashes.MD5 as MD5, Hashes.SHA1 as SHA1, Hashes.SHA256 as SHA256,
+                Stat.Ctime as Ctime, Stat.Mtime as Mtime, Stat.Atime as Atime
+                FROM foreach(row = {SELECT FullPath FROM glob(globs=array(a=WindowsRoot + MFTWebAppPath + "\\**{9}\\*",b=WindowsRoot + IISWebAppPath + "\\**{9}\\*"), accessor="ntfs")},
+                               query={ SELECT FullPath, hash(path=FullPath, accessor="ntfs") as Hashes, {SELECT Atime, Ctime, Mtime from stat(filename=FullPath, accessor="ntfs")} as Stat FROM scope()})
+  - name: LogCollectionMFT 
+    queries:
+    - Let compname <= SELECT Hostname from info()
+    - SELECT compname[0].Hostname as ComputerName, upload(file=FullPath), FullPath FROM glob(globs=array(a=WindowsRoot + MFTLogPath + "\\**{9}\\LOG*"), accessor="ntfs")
+  - name: LogCollectionIIS 
+    queries:
+    - Let compname <= SELECT Hostname from info()
+    - SELECT compname[0].Hostname as ComputerName, upload(file=FullPath), FullPath FROM glob(globs=array(a=WindowsRoot + IISLogs +"/**{9}.log"), accessor="ntfs")
