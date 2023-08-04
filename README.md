@@ -14,6 +14,9 @@ This repo is has three main components:
 -   MFTDetect – scripts that leverage the MFTData to automatically generate
     detections for common threat detection and incident response tools.
 
+-   MFTRespond – scripts and tools that can aide in responding to incidents
+    involving a MFT server
+
 -   MFTPlaybook – contains a MFT incident response playbook template that can be
     used as a starting point for incident responders to build incident response
     playbooks for MFT software. The template can be used in conjunction with a
